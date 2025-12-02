@@ -1,0 +1,63 @@
+<pre>
+    import discord
+import asyncio
+from dotenv import load_dotenv
+import pyscreeze
+import os
+
+load_dotenv()
+TOKEN = os.getenv('DISCORD_TOKEN')
+GUILD = os.getenv('DISCORD_GUILD')
+CHANNEL = 1414430087234850988
+USER = '6Drexw9'
+
+intents = discord.Intents.default()
+intents.message_content = True
+client = discord.Client(intents=discord.Intents.default())
+
+x, y = 18, 1404
+
+@client.event
+async def on_ready():
+    for guild in client.guilds:
+        if guild.name == GUILD:
+            break
+
+    print(f'{client.user} is connected to the following guild:\n'
+          f'{guild.name}(id: {guild.id})')
+    
+    channel = client.get_channel(CHANNEL)
+    print('Bot is active...')
+    while True:
+        pixel_color = pyscreeze.pixel(x, y)
+        match pixel_color:
+            case (181, 181, 181): #Shroud RGB
+                await channel.send(f'<@&1414977784303976458> found on {USER}!')
+                await asyncio.sleep(180)
+
+            case (76, 0, 230): #MS RGB
+                await channel.send(f'<@&1414979836811935925> found on {USER}!')
+                await asyncio.sleep(180)
+
+            case (128, 255, 255): #TS RGB
+                await channel.send(f'<@&1414977831255015526> found on {USER}!')
+                await asyncio.sleep(180)
+
+            case (128, 128, 128): #Storm RGB
+                print('Storm found!')
+                await asyncio.sleep(180)
+            
+            case (204, 128, 255): #Aurora RGB
+                print('Aurora found!')
+                await asyncio.sleep(180)
+
+            case (128, 204, 255): #Snow RGB
+                print('Snow found!')
+                await asyncio.sleep(120)
+
+        await asyncio.sleep(1)
+        
+client.run(TOKEN)
+</pre>
+<br>
+<a href="../reference.html">Click me to go back!</a>
