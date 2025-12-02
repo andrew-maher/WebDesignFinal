@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Andrew Maher's Contact Sheet</title>
+        <!-- Added meta tags that are not seen on website but are recognized by the search engine. -->
+        <meta charset="UTF-8">
+        <meta name="description" content="CIS117 Lab 06 Resume">
+        <meta name="author" content="Andrew Maher">
+        <meta name="keywords" content="resume, CV, Andrew Maher">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="header">
+            <pre style="font-size: 200%; margin: 0px; padding: 0px;">
+<a href="index.html"><img src="images\logo.png" width="50px" height="50px" alt="Andrew Maher Logo" ></a> Andrew Maher</pre>
+        </div>
+
+        <div style="text-align: center; font-size: 125%; word-spacing: 0%;">
+            <h1>Enter your information and message and it will be sent to me!</h1>
+            <ul>
+                <li>Please enter your name: <input type="prompt" value="Enter your name..." id="nameInput" onclick="value = ''"><br></li>
+                <li>Please enter your phone number: <input type="prompt" value="Enter your phone number..." id="numInput" onclick="value = ''"><br></li>
+                <li>Please enter your email: <input type="prompt" value="Enter your email..." id="emailInput" onclick="value = ''"></li>
+                <li>Please enter your message: <input type="prompt" value="Enter your message..." id="messageInput" onclick="value = ''"></li>
+            </ul>
+            <button onclick="displayInput()">Submit</button>
+            <button onclick="reset()">Reset</button>
+            <br><br><br>
+            <a href="index.html" style="color: aliceblue;">Return to Home Page</a><br>
+            <a href="resume.html" style="color: aliceblue;">Click here to view my resume!</a><br>
+            <a href="reference.html" style="color: aliceblue;">Click here to see my reference works!</a>
+        </div>
+        <script>
+            function displayInput() {
+                var name = document.getElementById("nameInput").value;
+                var num = document.getElementById("numInput").value;
+                var email = document.getElementById("emailInput").value;
+                var message = document.getElementById("messageInput").value;
+                alert("Thank you, " + name + "! Your message has been sent. I will respond to your email at " + email + " soon. Your message was: " + message);
+            }
+
+            function reset() {
+                document.getElementById("nameInput").value = "Enter your name...";
+                document.getElementById("numInput").value = "Enter your phone number...";
+                document.getElementById("emailInput").value = "Enter your email...";
+                document.getElementById("messageInput").value = "Enter your message...";
+            }
+        </script>
+    </body>    
+</html>
